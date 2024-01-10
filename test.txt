@@ -1,0 +1,3 @@
+Really, VS code or any other IDE is easier.
+
+That said, I imagine learning to use VIM effectively is going to be pretty useful.
