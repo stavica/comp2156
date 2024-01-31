@@ -4,7 +4,9 @@
   "description": "Comp2156 Lab Exercise",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "echo \"Error: no test specified\"",
+    "ci": "echo \"Dang, No CI configured!\""
+
   },
   "keywords": [],
   "author": "Nicolas Szymanski",
