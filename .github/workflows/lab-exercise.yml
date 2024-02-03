@@ -1,4 +1,7 @@
 name: DevOps Lab Exercise
+# As of exercise 4, this workflow automates the build and test process for Node.js projects upon pushes and pull requests to the main branch.
+# It sets up a Node.js environment, checks out the code, and runs defined 'build' (if present) and 'test' scripts from package.json.
+
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 # Controls when the workflow will run
 on:
@@ -11,14 +14,21 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # The job will run on the latest version of Ubuntu on Github Actions' VMs (aka the Runner)
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4 # Use the 'checkout' action to clone my repo into the Runner.
+      - name: Use Node.js # Name of the step, which is to use node.js
+        uses: actions/setup-node@v3  # Set up a node.js environment on the runner.
         with:
-          node-version: '20.x'
+          node-version: '20.x' # When setting up that node.js environment, use this version we specified
+
       # - run: npm ci
-      - run: npm run build --if-present
-      - run: npm test
+      # Commented out. This is used in CI pipelines to install dependencies faster/more reliably than `npm install`.
+      # Requires a `package-jock.json` or `npm-shrinkwrap.json` file for this to work. 
+
+      - run: npm run build --if-present # Try to run the 'build' script in our package.json file (that we made with `npm init` on our computer)
+      #  This won't be doing anything, since our package.json file doesn't have any `build` scripts in it. Hence the "--if-present". 
+
+      - run: npm test # Look for scripts named 'test' in our `package.json` file, and run execute them.
+      #  In this instance, our package.json file has 2 "test scripts", and both ones are just to echo some text.
