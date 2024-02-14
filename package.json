@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Comp2156 Lab Exercise",
   "main": "index.js",
-  
+  "homepage": "https://stavica.github.io/comp2156/",
   
   "scripts": {
     "start": "react-scripts start",
