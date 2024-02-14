@@ -3,12 +3,38 @@
   "version": "1.0.0",
   "description": "Comp2156 Lab Exercise",
   "main": "index.js",
+  "homepage": "https://stavica.github.io/comp2156/",
+  
   "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "echo \"Error: no test specified\"",
-    "ci": "echo \"Dang, No CI configured!\""
-
+    "eject": "react-scripts eject"
   },
+
   "keywords": [],
   "author": "Nicolas Szymanski",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^2.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4",
+    "travis": "^0.1.1",
+    "yarn": "^1.13.0"
+  },
+  
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+  
 }
